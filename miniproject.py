@@ -13,6 +13,7 @@ class Front:
         match_url = list(filter(lambda x: re.match(pattern, x), self.file_name))
         with open("url_file.txt", "a+") as file:
             [file.write(i + "\n") for i in match_url]
+        print("Ok")
 
 
 def main():
