@@ -9,8 +9,8 @@ for file_path in html_files:
         html_content = file.read()
 
     soup = BeautifulSoup(html_content, 'html.parser')
-    image_tags = soup.find_all('img', src=lambda src: src and 'images' in src)
-
+    image_tags = soup.find_all("img", src=lambda src: src and 'images' and 'icon' in src)
+    
     for image_tag in image_tags:
         current_src = image_tag['src']
         new_src = current_src.replace('images', 'Icons')
